@@ -1,10 +1,8 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: ci-agent-pod
   labels:
-    app: ci-agent
-
+    app: jenkins-agent
 spec:
   containers:
 
@@ -18,9 +16,9 @@ spec:
 
   - name: docker
     image: docker:24
-    command: ["sleep","9999"]
     securityContext:
       privileged: true
+    command: ["sleep","9999"]
 
   - name: helm
     image: alpine/helm:3.12
@@ -29,5 +27,3 @@ spec:
   - name: kubectl
     image: bitnami/kubectl:latest
     command: ["sleep","9999"]
-
-  restartPolicy: Never
