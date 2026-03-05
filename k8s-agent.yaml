@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: ci-agent
+spec:
+  containers:
+
+  - name: node
+    image: node:18
+    command: ["sleep","9999"]
+
+  - name: python
+    image: python:3.10
+    command: ["sleep","9999"]
+
+  - name: docker
+    image: docker:24
+    command: ["sleep","9999"]
+    securityContext:
+      privileged: true
+
+  - name: helm
+    image: alpine/helm:3.12
+    command: ["sleep","9999"]
+
+  - name: kubectl
+    image: bitnami/kubectl:latest
+    command: ["sleep","9999"]
