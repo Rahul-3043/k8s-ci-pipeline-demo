@@ -32,13 +32,7 @@ pipeline {
       }
     }
 
-    stage('Helm Stage') {
-      steps {
-        container('helm') {
-          sh 'helm version'
-        }
-      }
-    }
+   
 
     stage('Kubectl Stage') {
       steps {
