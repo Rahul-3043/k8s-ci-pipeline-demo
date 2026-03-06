@@ -34,13 +34,7 @@ pipeline {
 
    
 
-    stage('Kubectl Stage') {
-      steps {
-        container('kubectl') {
-          sh 'kubectl version --client'
-        }
-      }
-    }
+  
 
   }
 }
