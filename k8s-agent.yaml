@@ -21,7 +21,7 @@ spec:
     command: ["sleep","9999"]
 
   - name: helm
-    image: alpine/helm:3.12
+    image: bitnami/helm:3.13
     command: ["sleep","9999"]
 
   - name: kubectl
