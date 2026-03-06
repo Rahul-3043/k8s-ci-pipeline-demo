@@ -20,9 +20,7 @@ spec:
       privileged: true
     command: ["sleep","9999"]
 
-  - name: helm
-    image: bitnami/helm:3.13
-    command: ["sleep","9999"]
+ 
 
   - name: kubectl
     image: bitnami/kubectl:latest
