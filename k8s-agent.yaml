@@ -22,6 +22,4 @@ spec:
 
  
 
-  - name: kubectl
-    image: bitnami/kubectl:latest
-    command: ["sleep","9999"]
+  
