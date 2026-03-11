@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: maven-app-container
-        image: maven-app:1
+        image: rahul3043/images:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
         volumeMounts:
