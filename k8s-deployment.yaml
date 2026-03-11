@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: maven-app-container
-        image: rahul3043/images:latest
+        image: rahul3043/images:${API_BUILD}
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
