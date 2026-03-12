@@ -3,24 +3,26 @@ kind: Deployment
 metadata:
   name: maven-app-deployment
 spec:
-  replicas: 1
+  replicas: 3
+
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+
   selector:
     matchLabels:
       app: maven-app
+
   template:
     metadata:
       labels:
         app: maven-app
     spec:
       containers:
-      - name: maven-app-container
+      - name: maven-app
         image: ${appbuild}
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
-        volumeMounts:
-        - name: app-volume
-          mountPath: /data
-      volumes:
-      - name: app-volume
-        emptyDir: {}
